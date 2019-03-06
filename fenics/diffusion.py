@@ -29,8 +29,8 @@ c0.interpolate(ci)
 form=(fn.inner((c-c0)/timestep,v)+diffusion*(1-alpha)*fn.inner(fn.grad(c0),fn.grad(v))+diffusion*alpha*fn.inner(fn.grad(c),fn.grad(v)))*fn.dx
 
 time=0.0
-cFile=fn.File('conc.pvd')
-cFile<<(c0,time)
+#cFile=fn.File('conc.pvd')
+#cFile<<(c0,time)
 
 #   Loop for Solving
 
@@ -38,7 +38,7 @@ for ti in range(int(1.0/timestep)):
     fn.solve(form == 0,c)
     c0.assign(c)
     time += timestep
-    cFile<<(c0,time)
+    #cFile<<(c0,time)
 
 fn.plot(c)
 plt.show(c)
