@@ -23,7 +23,7 @@ c=fn.Function(SFS)
 v=fn.TestFunction(SFS)
 
 #   Initial condition
-f=fn.Expression('alpha*sin(2*PI*x[0])*cos(2*PI*x[1])',alpha=alpha,PI=np.pi,degree=1)
+f=fn.Expression('2*alpha*sin(2*PI*x[0])*cos(2*PI*x[1])',alpha=alpha,PI=np.pi,degree=1)
 c0.interpolate(f) #mapping the expression on to our domain in function space
 fn.plot(c0)
 plt.show()
